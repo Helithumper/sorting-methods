@@ -5,7 +5,7 @@ public class SortingTests {
 
 	// Recursive Alogrithm for Extra Credit
 	static boolean algorith(String str) {
-		//System.out.println("hi");
+		// System.out.println("hi");
 		if (str.length() == 0 || str.length() == 1) {
 			return true;
 		} else {
@@ -20,7 +20,7 @@ public class SortingTests {
 		if (str.length() > 1) {
 			int max = str.length() / 2;
 			for (int i = 0; i < max; i++) {
-				//System.out.println("lo");
+				// System.out.println("lo");
 				if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
 					return false;
 				}
@@ -75,11 +75,8 @@ public class SortingTests {
 
 	public static void main(String[] args) {
 		while (true) {
-			Scanner reader = new Scanner(System.in);
 			System.out.println("Enter A Word: ");
-			String ans = reader.next();
-			Boolean res = algorith(ans);
-			if (res) {
+			if (algorith(new Scanner(System.in).next())) {
 				System.out
 						.println("The word that you entered is a Palindrome!");
 			} else {
