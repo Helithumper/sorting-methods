@@ -1,8 +1,11 @@
 import java.util.Arrays;
-import java.util.Random;
+import java.util.Scanner;
+
 public class SortingTests {
+
+	// Recursive Alogrithm for Extra Credit
 	static boolean algorith(String str) {
-		System.out.println("hi");
+		//System.out.println("hi");
 		if (str.length() == 0 || str.length() == 1) {
 			return true;
 		} else {
@@ -12,11 +15,12 @@ public class SortingTests {
 		}
 	}
 
+	// Iterative Algorithm for Extra Credit
 	static boolean algorithl(String str) {
 		if (str.length() > 1) {
 			int max = str.length() / 2;
 			for (int i = 0; i < max; i++) {
-				System.out.println("lo");
+				//System.out.println("lo");
 				if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
 					return false;
 				}
@@ -25,17 +29,22 @@ public class SortingTests {
 		}
 		return false;
 	}
-	static void insertionSort(int[] array){
-		for(int i = 0; i<array.length;i++){ //for each item in the array
-			for(int j = array.length-1; j>i; j--){ //for each item after i
+
+	// InsertionSort Method
+	static void insertionSort(int[] array) {
+		for (int i = 0; i < array.length; i++) { // for each item in the array
+			for (int j = array.length - 1; j > i; j--) { // for each item after
+															// i
 				System.out.println(Arrays.toString(array));
-				if(array[j]<array[j-1]){//if j is less than its left neighbor
-					swap(array,j,j-1);//swap j and its left neighbor
+				if (array[j] < array[j - 1]) {// if j is less than its left
+												// neighbor
+					swap(array, j, j - 1);// swap j and its left neighbor
 				}
 			}
-			System.err.println(i+"\n\n");
+			System.err.println(i + "\n\n");
 		}
 	}
+
 	// Selective Sorting
 	static void selectiveSort(int[] array) {
 		for (int i = 0; i < array.length - 1; i++) { // For each element in the
@@ -65,18 +74,19 @@ public class SortingTests {
 	}
 
 	public static void main(String[] args) {
-		/*
-		 * String[] words = {""}; for (String s : words) {
-		 * System.out.println(algorith(s) + "\t" + algorithl(s)); }
-		 */
-		int[] numbers = {10,9,8,7,6,5,4,3,1,2};
-		//Arrays.fill(numbers, 1);
-		Random rand = new Random();
-		/*for(int i = 0; i<numbers.length; i++){
-			numbers[i] = i;
-		}*/
-		insertionSort(numbers);
-		System.out.println(Arrays.toString(numbers));
+		while (true) {
+			Scanner reader = new Scanner(System.in);
+			System.out.println("Enter A Word: ");
+			String ans = reader.next();
+			Boolean res = algorith(ans);
+			if (res) {
+				System.out
+						.println("The word that you entered is a Palindrome!");
+			} else {
+				System.out
+						.println("The word that you entered is not a Palindrome!");
+			}
+		}
 
 	}
 
