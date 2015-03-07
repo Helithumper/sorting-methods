@@ -5,6 +5,7 @@ public class SortingTests {
 
 	// Extra Credit Recursive (Palindromes)
 	static boolean algorith(String str) {
+		str = str.toLowerCase();
 		// System.out.println("hi");
 		if (str.length() == 0 || str.length() == 1) {
 			return true;
